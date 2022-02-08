@@ -67,6 +67,7 @@ public class UsedCarLot {
         return sold;
     }
 
+    //nikita is cool kid 
     /* "sells" the Car located at indexOfCarToSell,
        but instead of removing it and shifting the inventory
        list to the left, REPLACE the Car at indexOfCarToSell
