@@ -7,26 +7,40 @@ import java.util.ArrayList;
 
 public class UsedCarLot {
 
-    /** A list of all the cars in the Carlot */
+    /** A list of all the cars in the arrayList */
     private ArrayList<Car> inventory;
 
 
     /**
      * instantiates Car objects
+     * makes a empty list
      */
     public UsedCarLot() {
         inventory = new ArrayList<Car>();
     }
 
-
+    /**
+     * Returns the list of cars
+     * @return The inventory
+     */
     public ArrayList<Car> getInventory() {
         return inventory;
     }
 
+    /**
+     * Adds a car to the list
+     * @param added The car
+     */
     public void addCar(Car added) {
         inventory.add(added);
     }
 
+    /**
+     * swaps the cars in different indexes of the list
+     * @param one one of the cars
+     * @param two the other one
+     * @return true
+     */
     public boolean swap(int one, int two) {
         if(one > inventory.size() || two > inventory.size()) {
             return false;
@@ -43,6 +57,12 @@ public class UsedCarLot {
     DUE TO THIS PRECONDITION, you do NOT need to check for boundary errors
     like you did the other addCar method; also note that this method is void
 */
+
+    /**
+     * Adds a car at a specific index
+     * @param indexToAdd the spot in the list
+     * @param carToAdd  the specific car object
+     */
     public void addCar(int indexToAdd, Car carToAdd)
     {
         inventory.add(indexToAdd,carToAdd);
@@ -60,6 +80,12 @@ public class UsedCarLot {
         HINT: the ArrayList remove() method returns the removed element while also
               removing it from the ArrayList
       */
+
+    /**
+     * shifts one car object to the left
+     * @param indexOfCarToSell the position of the car in the index before moving
+     * @return the car that is being shifted
+     */
     public Car sellCarShift(int indexOfCarToSell)
     {
         Car sold = inventory.remove(indexOfCarToSell);
@@ -67,7 +93,7 @@ public class UsedCarLot {
         return sold;
     }
 
-    //nikita is cool kid 
+    //nikita is cool kid
     /* "sells" the Car located at indexOfCarToSell,
        but instead of removing it and shifting the inventory
        list to the left, REPLACE the Car at indexOfCarToSell
@@ -77,6 +103,12 @@ public class UsedCarLot {
        PRECONDITION: indexOfCarToSell < inventory.size()
 
        This method returns the Car that is being "sold" (replaced with null)
+     */
+
+    /**
+     * sells the car and removes it from the list
+     * @param indexOfCarToSell the position of the list the car that is wanted
+     * @return the car that is sold
      */
     public Car sellCarNoShift(int indexOfCarToSell)
     {
@@ -93,6 +125,12 @@ public class UsedCarLot {
 
        PRECONDITIONS: indexOfCarToMove < inventory.size()
                       destinationIndex < inventory.size()
+     */
+
+    /**
+     * Moves a car object to a specific index and moved the other objects to the left
+     * @param indexOfCarToMove the position of the car
+     * @param destinationIndex the position that the user wants to car object to be
      */
     public void moveCar(int indexOfCarToMove, int destinationIndex)
     {
